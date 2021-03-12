@@ -4,7 +4,13 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 public class InvoiceServiceTest {
-    public void welcome(){
-        System.out.println("Welcome");
+    @Test
+    public void givenDistanceAndTime_ShouldReturnTotalFare() {
+
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        double distance = 2.0;
+        int time = 5;
+        double fare = invoiceGenerator.calculateFare(distance, time);
+        Assertions.assertEquals(25,fare,0.0);
     }
 }
