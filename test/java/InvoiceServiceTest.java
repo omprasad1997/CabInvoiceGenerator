@@ -36,4 +36,13 @@ public class InvoiceServiceTest {
         int totalNumOfRides = 2;
         System.out.println(invoiceGenerator.enhancedInvoice(totalNumOfRides,distanceFor1, timeFor1,distanceFor2,timeFor2));
     }
+
+    @Test
+    public void givenUserId_ShouldReturnTotalFare() {
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        int userId = 11;
+        List<Integer> invoice = invoiceGenerator.invoiceService(userId);
+        System.out.println(invoice);
+
+    }
 }
