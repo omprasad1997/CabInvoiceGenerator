@@ -3,6 +3,8 @@ import java.util.*;
 public class InvoiceGenerator {
     private static final double MINIMUM_COST_PER_KILOMETER = 10;
     private static final int COST_PER_TIME = 1;
+    private static final double PREMIUM_MINIMUM_COST_PER_KILOMETER = 20;
+    private static final int PREMIUM_COST_PER_TIME = 2;
 
     public double calculateFare(double distance, int time) {
         return distance*MINIMUM_COST_PER_KILOMETER + time*COST_PER_TIME;
@@ -32,5 +34,12 @@ public class InvoiceGenerator {
         }};
 
         return booksRepository.get(userId);
+    }
+
+    public double premiumRides(int ride, double distance, int time) {
+        if(ride == 1)
+            return distance*MINIMUM_COST_PER_KILOMETER + time*COST_PER_TIME;
+        else
+            return distance*PREMIUM_MINIMUM_COST_PER_KILOMETER + time*PREMIUM_COST_PER_TIME;
     }
 }
