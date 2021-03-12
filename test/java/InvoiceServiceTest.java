@@ -45,4 +45,20 @@ public class InvoiceServiceTest {
         System.out.println(invoice);
 
     }
+
+    @Test
+    public void givenDistanceAndTime_ForPremiumRides_ShouldReturnTotalFare() {
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        double distanceForNormal = 3.0;
+        int timeForNormal = 6;
+        double distanceForPremium = 8.0;
+        int timeForPremium = 10;
+        int normalRides  = 1;
+        int premiumRides = 2;
+        double normalRidesFare = invoiceGenerator.premiumRides(normalRides,distanceForNormal,timeForNormal);
+        Assertions.assertEquals(36,normalRidesFare);
+
+        double premiumRidesFare = invoiceGenerator.premiumRides(premiumRides,distanceForPremium,timeForPremium);
+        Assertions.assertEquals(180,premiumRidesFare);
+    }
 }
