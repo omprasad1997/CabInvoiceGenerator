@@ -18,4 +18,19 @@ public class InvoiceGenerator {
         return "Total number Of Rides: " + totalNumOfRides +"\n"+ "Total Fare: "+totalFare+"\n"
                 + "Average Fare Per Ride: " + averageFarePerRide;
     }
+
+
+    public List<Integer> invoiceService(int userId) {
+        ArrayList<Integer> userId_11= new ArrayList<Integer>();
+        userId_11.add(111);userId_11.add(123);userId_11.add(423);
+        ArrayList<Integer> userId_12= new ArrayList<Integer>();
+        userId_12.add(135);userId_12.add(145);userId_12.add(500);
+
+        Map<Integer, ArrayList<Integer>> booksRepository = new HashMap<>(){{
+            put(11,userId_11);
+            put(12,userId_12);
+        }};
+
+        return booksRepository.get(userId);
+    }
 }
